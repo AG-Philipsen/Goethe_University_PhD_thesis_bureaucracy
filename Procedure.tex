@@ -1,0 +1,64 @@
+\documentclass[a4paper]{article}
+\usepackage{xcolor}
+\usepackage{eurosym}
+\usepackage[textwidth=16cm,textheight=26cm]{geometry}
+\usepackage[colorlinks,filecolor=violet,urlcolor=blue,%
+            pdftitle={PhD thesis bureaucracy}]{hyperref}
+
+
+\newlength{\titleVerticalSpacing}
+\newcommand{\myTitle}[2]{%
+    \begingroup
+        \titleVerticalSpacing = 0.08\textheight
+        \centering
+        \vspace*{\titleVerticalSpacing}
+        {\Huge\bfseries #1}\\[\baselineskip]
+        {\itshape #2}\\[3\baselineskip]
+    \endgroup
+}
+
+
+\begin{document}
+    
+    \myTitle{PhD thesis bureaucracy}{January 2017}
+
+    \section*{Requirements for the thesis}
+        There are not that many requirements when it comes to style, just few that must be fulfilled:
+        \begin{itemize}
+            \item The \textcolor{red}{first $2$ pages} are fixed, I am sure you have seen these in every other thesis.
+                  In \LaTeX, these can be produced using the files \texttt{Titlepage.tex} and \texttt{Titlepage\_back.tex} (after having filled them out).
+                  Of course, you can make them yourself even better.
+            \item You need a \textcolor{red}{$5$ page long} German summary. Note that at the Promotionsb\"uro they are strict on the number of pages, but it has not been a problem so far if the fifth page is not completely full.
+            \item You need \textcolor{red}{a CV} at the end of your thesis which has to include your teaching experiences and a list of publications (it does not need a photograph).
+        \end{itemize}
+        
+        
+    \section*{Printing the Thesis}
+        \begin{itemize}
+            \item A possibility to print your thesis is to use the \href{http://druck.uni-frankfurt.de/druckzentrum/}{university print service}.
+                  Some of the past students were very pleased with the result.
+                  In general it takes a couple of days.
+            \item A more professional, though more expensive alternative is to use a professional private service.
+                  There are many in the Frankfurt area, so feel free to google them.
+                  One extraordinarily professional shop\footnote{You could need it if you have very particular figures (e.g. with fancy shadings) in your Thesis.} is in Darmstadt and it has a very nice \href{http://www.der-felger.de/}{website}.
+                  You can directly order online and receive your Thesis at home (but you can also pick it up yourself).
+                  They offer quite a lot of options for the binding and they are very fast (if you make your order in the morning, you can pick it up in the afternoon). Furthermore, every first and fifteenth day of the month, they offer a 20\% discount on the printing.
+        \end{itemize}
+        
+    
+    \section*{Summary of needed documents for the submission}
+        Most of the information can be gathered from the \href{https://www.uni-frankfurt.de/42800906/startseite}{\texttt{Promotionsb\"uro's website}}, more specifically their \href{https://www.uni-frankfurt.de/42800991/downloads}{\texttt{download page}}.
+        So what you need to hand in to the Promotionsb\"uro is:
+        \begin{itemize}
+            \item $7$ copies of your dissertation ($5 + 2$), where they will stamp two of them for you to take back to your sensors;
+            \item $1$ burnt CD with the dissertation on it (you can produce a nice cover using the \href{run:Cover.tex}{file} in the \texttt{CD\_cover} directory in the repository);
+            \item A separate $2$ page German summary, which is in addition to the $5$ page summary in your thesis;
+            \item A \href{run:Erlaerung_Formular.pdf}{signed declaration} that you have carried out the work independently;
+            \item A \href{run:Antrag_Formular.pdf}{signed request} to be admitted for the assessment process;
+            \item A CV with a photograph.
+        \end{itemize}
+        So basically you just walk over to the Promotionsb\"uro (see \texttt{Promotionsbuero\_Anfahrtsplan.pdf} file in the repository) and hand it all in.
+        They will give you a bill of \euro$\,150$ which you have to pay, and that is basically that.
+        At a later point you need to fix your defense and find a committee.
+    
+\end{document}

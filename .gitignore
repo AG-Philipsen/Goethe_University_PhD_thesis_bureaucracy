@@ -13,3 +13,5 @@
 *.toc
 *-frn.tex
 *~
+AuxiliaryLatexFiles/
+Procedure.pdf
