@@ -6,7 +6,6 @@
             pdftitle={PhD thesis bureaucracy}]{hyperref}
 \usepackage{multicol}
 
-
 \newlength{\titleVerticalSpacing}
 \newcommand{\myTitle}[2]{%
     \begingroup
@@ -26,30 +25,38 @@
     \section*{Requirements for the thesis}
         There are not that many requirements when it comes to style, just few that must be fulfilled:
         \begin{itemize}
-            \item The \textcolor{red}{first $2$ pages} are fixed, I am sure you have seen these in every other thesis.
+            \item The \textcolor{red}{first $2$ pages} are fixed, I am sure you have seen these in every other theses.
                   In \LaTeX, these can be produced using the files \texttt{Titlepage.tex} and \texttt{Titlepage\_back.tex} (after having filled them out).
-                  Of course, you can make them yourself even better.
-            \item You need a \textcolor{red}{$5$ page long} German summary. Note that at the Promotionsb\"uro they are strict on the number of pages, but it has not been a problem so far if the fifth page is not completely full.
-            \item You need \textcolor{red}{a CV} at the end of your thesis which has to include your teaching experiences and a list of publications (it does not need a photograph).
+                  You can alternatively make them yourself. The requirement is on content, not on style and spacing.
+            \item You need a \textcolor{red}{$\geq 5$ page long} German summary. This is a hard limit, but our experiences show that the fifth page need
+              only be partially filled.
+            \item You need \textcolor{red}{a CV} at the end of your thesis which has to include your teaching experiences and a list of publications
+              (it does not require a photograph).
         \end{itemize}
         
         
     \section*{Printing the Thesis}
+        You can print your thesis in whatever way you want. Here are a few alternatives:
         \begin{itemize}
-            \item A possibility to print your thesis is to use the \href{http://druck.uni-frankfurt.de/druckzentrum/}{university print service}.
-                  Some of the past students were very pleased with the result.
-                  In general it takes a couple of days.
-            \item A more professional, though more expensive alternative is to use a professional private service.
+            \item You can use the \href{http://druck.uni-frankfurt.de/druckzentrum/}{university print service}.
+                  Some of the previous students have been very pleased with the result. In general it takes a couple of days,
+                  and costs $\approx$ \euro{}15\,--\,\euro{}20 per copy.
+            \item A more expensive alternative is to use a professional private service.
                   There are many in the Frankfurt area, so feel free to google them.
-                  One extraordinarily professional shop\footnote{You could need it if you have very particular figures (e.g. with fancy shadings) in your Thesis.} is in Darmstadt and it has a very nice \href{http://www.der-felger.de/}{website}.
+                  One extraordinarily professional shop\footnote{You could need it if you have very particular figures (e.g.
+                    with fancy shadings) in your Thesis.} is in Darmstadt and it has a very nice \href{http://www.der-felger.de/}{website}.
                   You can directly order online and receive your Thesis at home (but you can also pick it up yourself).
-                  They offer quite a lot of options for the binding and they are very fast (if you make your order in the morning, you can pick it up in the afternoon). Furthermore, every first and fifteenth day of the month, they offer a 20\% discount on the printing.
+                  They offer quite a lot of options for the binding and they are very fast (if you make your order in the morning, you can
+                  pick it up in the afternoon). Furthermore, every first and fifteenth day of the month, they offer a 20\% discount on the printing.
+            \item A third (and cheapest) alternative is to buy the required 100g paper yourself and print your thesis using the university
+              printers. The printed pages can then be bound with a standard glue binding machine, or something equivalent. This should be done during
+              low activity hours, as it will most likely take a substantial amount of time.
         \end{itemize}
         
     
     \section*{Summary of needed documents for the submission}
         Most of the information can be gathered from the \href{https://www.uni-frankfurt.de/42800906/startseite}{\texttt{Promotionsb\"uro's website}}, more specifically their \href{https://www.uni-frankfurt.de/42800991/downloads}{\texttt{download page}}.
-        So what you need to hand in to the Promotionsb\"uro is:
+        Below is a summary of what you need to hand off to the Promotionsb\"uro:
         \begin{itemize}
             \item $7$ copies of your dissertation ($5 + 2$), where they will stamp two of them for you to take back to your sensors;
             \item $1$ burnt CD with the dissertation on it (you can produce a nice cover using the \href{run:Cover.tex}{file} in the \texttt{CD\_cover} directory in the repository);
