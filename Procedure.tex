@@ -1,11 +1,19 @@
 \documentclass[a4paper]{article}
-\usepackage{xcolor}
+\usepackage[svgnames]{xcolor}
 \usepackage{eurosym}
-\usepackage[textwidth=16cm,textheight=26cm]{geometry}
-\usepackage[colorlinks,filecolor=violet,urlcolor=blue,%
-            pdftitle={PhD thesis bureaucracy}]{hyperref}
 \usepackage{multicol}
+\usepackage{siunitx}
+\usepackage{xifthen}
+\usepackage[textwidth=16cm,textheight=26cm]{geometry}
+\usepackage[pdftitle={PhD thesis bureaucracy}]{hyperref}
 
+%Colors for hyperref setup, but also to be used later in consinstent way
+\colorlet{fileColor}{violet}
+\colorlet{urlColor}{blue}
+\colorlet{linkColor}{blue!50!black}
+\hypersetup{colorlinks, filecolor=fileColor, urlcolor=urlColor, linkcolor=linkColor}
+
+%Command for heding
 \newlength{\titleVerticalSpacing}
 \newcommand{\myTitle}[2]{%
     \begingroup
@@ -17,6 +25,18 @@
     \endgroup
 }
 
+%Commands for links, files, etc.
+\newcommand{\attention}[1]{\textcolor{red}{#1}}
+\newcommand{\file}[2][]{%
+    \ifthenelse{\isempty{#1}}%
+        {\textcolor{fileColor}{#2}}%
+        {\href{run:#1}{\texttt{\textcolor{fileColor}{#2}}}}%
+}
+\newcommand{\website}[2][]{%
+    \ifthenelse{\isempty{#1}}%
+        {\textcolor{urlColor}{#2}}%
+        {\href{#1}{\texttt{\textcolor{urlColor}{#2}}}}%
+}
 
 \begin{document}
     
@@ -25,67 +45,59 @@
     \section*{Requirements for the thesis}
         There are not that many requirements when it comes to style, just few that must be fulfilled:
         \begin{itemize}
-            \item The \textcolor{red}{first $2$ pages} are fixed, I am sure you have seen these in every other theses.
-                  In \LaTeX, these can be produced using the files \texttt{Titlepage.tex} and \texttt{Titlepage\_back.tex} (after having filled them out).
+            \item The \attention{first $2$ pages} are fixed, I am sure you have seen these in every other theses.
+                  In \LaTeX, these can be produced using the files \file{Titlepage.tex} and \file{Titlepage\_back.tex} (after having filled them out).
                   You can alternatively make them yourself. The requirement is on content, not on style and spacing.
-            \item You need a \textcolor{red}{$\geq 5$ page long} German summary. This is a hard limit, but our experiences show that the fifth page need
+            \item You need a \attention{$\geq 5$ page long} German summary. This is a hard limit, but our experiences show that the fifth page need
               only be partially filled.
-            \item You need \textcolor{red}{a CV} at the end of your thesis which has to include your teaching experiences and a list of publications
+            \item You need \attention{a CV} at the end of your thesis which has to include your teaching experiences and a list of publications
               (it does not require a photograph).
         \end{itemize}
         
         
-    \section*{Printing the Thesis}
+    \section*{Printing the thesis}
         You can print your thesis in whatever way you want. Here are a few alternatives:
         \begin{itemize}
-            \item You can use the \href{http://druck.uni-frankfurt.de/druckzentrum/}{university print service}.
+            \item You can use the \website[http://druck.uni-frankfurt.de/druckzentrum/]{university print service}.
                   Some of the previous students have been very pleased with the result. In general it takes a couple of days,
-                  and costs $\approx$ \euro{}15\,--\,\euro{}20 per copy.
+                  and costs approximatively between \euro$\,15$ and \euro$\,20$ per copy.
             \item A more expensive alternative is to use a professional private service.
                   There are many in the Frankfurt area, so feel free to google them.
                   One extraordinarily professional shop\footnote{You could need it if you have very particular figures (e.g.
-                    with fancy shadings) in your Thesis.} is in Darmstadt and it has a very nice \href{http://www.der-felger.de/}{website}.
-                  You can directly order online and receive your Thesis at home (but you can also pick it up yourself).
+                    with fancy shadings) in your thesis.} is in Darmstadt and it has a very nice \website[http://www.der-felger.de/]{website}.
+                  You can directly order online and receive your thesis at home (but you can also pick it up yourself).
                   They offer quite a lot of options for the binding and they are very fast (if you make your order in the morning, you can
-                  pick it up in the afternoon). Furthermore, every first and fifteenth day of the month, they offer a 20\% discount on the printing.
-            \item A third (and cheapest) alternative is to buy the required 100g paper yourself and print your thesis using the university
+                  pick it up in the afternoon). Furthermore, every first and fifteenth day of the month, they offer a $20$\% discount on the printing.
+            \item A third (and cheapest) alternative is to buy the required \SI{100}{\gram} paper yourself and print your thesis using the university
               printers. The printed pages can then be bound with a standard glue binding machine, or something equivalent. This should be done during
               low activity hours, as it will most likely take a substantial amount of time.
         \end{itemize}
         
     
     \section*{Summary of needed documents for the submission}
-        Most of the information can be gathered from the \href{https://www.uni-frankfurt.de/42800906/startseite}{\texttt{Promotionsb\"uro's website}}, more specifically their \href{https://www.uni-frankfurt.de/42800991/downloads}{\texttt{download page}}.
+        Most of the information can be gathered from the \website[https://www.uni-frankfurt.de/42800906/startseite]{Promotionsb\"uro's website}, more specifically their \website[https://www.uni-frankfurt.de/42800991/downloads]{download page}.
         Below is a summary of what you need to hand off to the Promotionsb\"uro:
         \begin{itemize}
             \item $7$ copies of your dissertation ($5 + 2$), where they will stamp two of them for you to take back to your sensors;
-            \item $1$ burnt CD with the dissertation on it (you can produce a nice cover using the \href{run:Cover.tex}{file} in the \texttt{CD\_cover} directory in the repository);
+            \item $1$ burnt CD with the dissertation on it (you can produce a nice cover using the \file{file} in the \texttt{CD\_cover} directory in the repository);
             \item A separate $2$ page German summary, which is in addition to the $5$ page summary in your thesis;
-            \item A \href{run:Erlaerung_Formular.pdf}{signed declaration} that you have carried out the work independently;
-            \item A \href{run:Antrag_Formular.pdf}{signed request} to be admitted for the assessment process;
+            \item A \file[Erlaerung_Formular.pdf]{signed declaration} that you have carried out the work independently;
+            \item A \file[Antrag_Formular.pdf]{signed request} to be admitted for the assessment process;
             \item A CV with a photograph.
         \end{itemize}
-        So basically you just walk over to the Promotionsb\"uro (see \texttt{Promotionsbuero\_Anfahrtsplan.pdf} file in the repository) and hand it all in.
+        So basically you just \file[Promotionsbuero\_Anfahrtsplan.pdf]{walk over} to the Promotionsb\"uro and hand it all in.
         They will give you a bill of \euro$\,150$ which you have to pay, and that is basically that.
         At a later point you need to fix your defence and find a committee.
 
     \section*{Organising a defence}
-      After submitting your thesis for evaluation, your sensors will be given a
-      one month period to assess the thesis\footnote{Although it can take
-        longer, the Promotionsb\"uro doesn't want to be rude to the
-        professors.}. After this period, the 4-6 week thesis circulation can
-      begin. At this stage, you should fix a committee as well as a date
-      for your defence. You can either find a committee first, and then try to
-      all agree on a date, or fix a date (or a set of possible dates) with your
-      sensors, and then find a committee to fit your available dates.
+      After submitting your thesis for evaluation, your sensors will be given a one month period to assess the thesis\footnote{Although it can take longer, the Promotionsb\"uro does not want to be rude to the professors.}.
+      After this period, the $4$-$6$ week thesis circulation can begin.
+      At this stage, you should fix a committee as well as a date for your defence.
+      You can either find a committee first, and then try to all agree on a date, or fix a date (or a set of possible dates) with your sensors, and then find a committee to fit your available dates.
 
-      The committee must consist of four faculty employees, three of which must
-      be professors. Two of them will be your sensors, while \textcolor{red}{the
-        two others must be from institutes different from your own}. The six
-      institutes of the faculty of physics are%
-      \footnote{Can someone verify that you can choose a committee from all of
-        these?}
-      %
+      The committee must consist of four faculty employees, three of which must be professors.
+      Two of them will be your sensors, while \attention{the two others must be from institutes different from your own}.
+      The six institutes of the faculty of physics are\footnote{Can someone verify that you can choose a committee from all of these?}
       \begin{multicols}{2}
         \begin{itemize}
           \item Institut f\"ur Angewandte Physik (IAP),
@@ -96,22 +108,11 @@
           \item Physikalisches Institut (PI).
         \end{itemize}
       \end{multicols}
-      %
-      On top of the four members of your committee, you also need to find
-      replacements for the two additional assessors, should they fail to show up
-      for the defence. So all in all you need \textcolor{red}{six members of
-        faculty staff, two will be your sensors, two will be staff from a
-        different institute, two will be their replacements}. When the committee
-      has been organised, the time and date has been fixed, and a room has been
-      booked, you need to fill in the \href{run:Prufungskommission.pdf}{defence
-        committee form}. As one can see from the form, you need to appoint a
-      chairman, as well as someone to write the PhD protocol. This form must
-      then be approved and signed by the deanery, who will then forward it to
-      the promotionsb\"uro. This must happen before the circulation can
-      commence, and must therefore be in order at least four weeks before the
-      date of the defence%
-      \footnote{I cannot find any mention of this in the PhD regulation document
-        on the promotionsb\"uro homepage, but I was yelled at for handing this
-        in a week before my defence. - \emph{Jonas}}.
+      On top of the four members of your committee, you also need to find replacements for the two additional assessors, should they fail to show up for the defence.
+      So all in all you need \attention{six members of faculty staff, two will be your sensors, two will be staff from a different institute, two will be their replacements}.
+      When the committee has been organised, the time and date has been fixed, and a room has been booked, you need to fill in the \file[Prufungskommission.pdf]{defence committee form}.
+      As one can see from the form, you need to appoint a chairman, as well as someone to write the PhD protocol.
+      This form must then be approved and signed by the deanery, who will then forward it to the promotionsb\"uro.
+      This must happen before the circulation can commence, and must therefore be in order at least four weeks before the date of the defence\footnote{I cannot find any mention of this in the PhD regulation document on the promotionsb\"uro homepage, but I was yelled at for handing this in a week before my defence. - \emph{Jonas}}.
     
 \end{document}
