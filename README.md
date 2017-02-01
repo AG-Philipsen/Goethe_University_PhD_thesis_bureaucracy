@@ -4,7 +4,7 @@ PhD thesis bureaucracy
 This repository is meant as guide to deal with the bureaucracy
 needed to hand in the Ph.D. thesis at the Promotionbüro in Frankfurt
 and later to organise the defense.
-At the moment, it is valid only for the Physics faculty (Fachbereich 13)
+It is valid only for the Physics faculty (Fachbereich 13)
 of J. W. Goethe Universität.
 
 Cloning the repository and reading the Procedure.pdf file (obtained
