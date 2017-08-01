@@ -4,7 +4,8 @@
 \usepackage{multicol}
 \usepackage{siunitx}
 \usepackage{xifthen}
-\usepackage[textwidth=16cm,textheight=25cm]{geometry}
+\usepackage{datetime}
+\usepackage[textwidth=15cm,textheight=23cm]{geometry}
 \usepackage[pdftitle={PhD thesis bureaucracy}]{hyperref}
 
 %Colors for hyperref setup, but also to be used later in consinstent way
@@ -13,7 +14,7 @@
 \colorlet{linkColor}{blue!50!black}
 \hypersetup{colorlinks, filecolor=fileColor, urlcolor=urlColor, linkcolor=linkColor}
 
-%Command for heding
+%Command for heading
 \newlength{\titleVerticalSpacing}
 \newcommand{\myTitle}[2]{%
     \begingroup
@@ -24,6 +25,8 @@
         {\itshape #2}\\[3\baselineskip]
     \endgroup
 }
+\newdateformat{monthyeardate}{%
+  \monthname[\THEMONTH] \THEYEAR}
 
 %Commands for links, files, etc.
 \newcommand{\attention}[1]{\textcolor{red}{#1}}
@@ -40,7 +43,7 @@
 
 \begin{document}
     
-    \myTitle{PhD thesis bureaucracy}{May 2017}
+    \myTitle{PhD thesis bureaucracy}{\monthyeardate\today}
 
     \section*{Requirements for the thesis}
         There are not that many requirements when it comes to style, just few that must be fulfilled:
@@ -124,6 +127,33 @@
         Normally sending the \texttt{pdf} file around should be enough. 
         According to the \website[http://www.uni-frankfurt.de/42801290/mitteilungen]{important notes} of the Promotionsb\"uro, you are supposed to give one copy \emph{only} to each of your referees.
         Nevertheless it seems that also the other members of the committee should get one, even though it is not stated anywhere than you should be the person providing them with a copy\footnote{I was reproached with not having given a copy of my thesis to one member of the commission, which asked the promotionsb\"uro about how to get one. - \emph{Alessandro}}.
-         
-    
+
+
+    \section*{Getting your certificate}
+         In Germany, until you do not get your certificate, you cannot say that you are a Doctor
+         Only other people who knows you successfully defended can.
+         Fortunately, it is not so hard to get it.
+         Basically you have to hand in your thesis to the library, get a confirmation about your delivery and bring this confirmation to the Promotionsb\"uro where you will get your certificate.
+         Some further information could be useful.
+         \begin{itemize}
+            \item According to the \website[http://www.ub.uni-frankfurt.de/dissertationen/abgabe.html\#online]{library website}, you have several ways to hand in your thesis.
+                  Feel free to choose any of them.
+                  The least obsolete way to do so is to
+                  \begin{itemize}
+                      \item \website[http://publikationen.ub.uni-frankfurt.de/publish]{upload online} the pdf file of your thesis,
+                      \item fill out, print and sign the \file[Einverstaendniserklaerung.pdf]{authorisation to publish} your thesis,
+                      \item burn 1 CD with the dissertation on it as done for the submission,
+                      \item prepare two printed and bound copy of your thesis
+                  \end{itemize}
+                  and bring everything \website[https://www.ub.uni-frankfurt.de/zentrale/so_en.html]{to the library}.
+                  It is important to note that \textbf{no staple or spiral binding} will be accepted.
+            \item It is possible to get back from the Promotionsb\"uro the printed copies you handed in before your defense (you will get fewer back in case some Professor decided to keep one).
+            \item Together with the original certificate in German, you will get two duplicates and one English translation of it.
+        \end{itemize}
+
+        \bigskip
+        \begin{center}
+            \fbox{\parbox[c][3em][c]{0.9\textwidth}{\centering\large Congratulations! You are a doctor and you can say it! \texttt{\attention{Ph}}inally \texttt{\attention{D}}one!}}
+        \end{center}
+
 \end{document}
